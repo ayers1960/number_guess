@@ -39,6 +39,37 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.users (
+    username character varying(25) NOT NULL,
+    bestgame integer DEFAULT 0 NOT NULL,
+    gamecount integer DEFAULT 0 NOT NULL
+);
+
+
+ALTER TABLE public.users OWNER TO freecodecamp;
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+--
+
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (username);
+
+
 --
 -- PostgreSQL database dump complete
 --
