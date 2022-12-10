@@ -24,7 +24,11 @@ PLAYING=1
 CNT=1
 while (( $PLAYING == 1 ))
 do
-	if (( $GUESS == $RNUM ))
+	
+	if ! [[ "$GUESS" =~ ^[0-9]+$ ]]
+    	then
+	        echo "That is not an integer, guess again:"
+	elif (( $GUESS == $RNUM ))
 	then
 		echo "You guessed it in $CNT tries. The secret number was $RNUM. Nice job!"
 		PLAYING=0
